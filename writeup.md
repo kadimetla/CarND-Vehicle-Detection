@@ -38,7 +38,8 @@ You're reading it!
 
 #### 1. Explain how (and identify where in your code) you extracted HOG features from the training images.
 
-The code for this step is contained in the first code cell of the IPython notebook (or in lines # through # of the file called `some_file.py`).  
+The code for this step is contained in the object hog features code cell of the IPython notebook VehicleDetection.ipynb. I explored hog features in the IPython notebook scikit-imageHog.ipynb for car and notcar images. 
+ 
 
 I started by reading in all the `vehicle` and `non-vehicle` images.  Here is an example of one of each of the `vehicle` and `non-vehicle` classes:
 
@@ -54,6 +55,16 @@ Here is an example using the `YCrCb` color space and HOG parameters of `orientat
 #### 2. Explain how you settled on your final choice of HOG parameters.
 
 I tried various combinations of parameters and...
+
+
+| parameters       		  |     value     					                      | description                                  |
+|:---------------------:|:---------------------------------------------:|:---------------------------------------------:|
+| color space     		  | 	 YCrCb			                                | Can be RGB, HSV, LUV, HLS, YUV, YCrCb         |
+| color histogram bins  |  	spatial size = (64,64)	<br> histogram bins = 64 | down sample image using spartial size <br> histogram bins         |
+| H  |  	spatial size = (64,64)	<br> histogram bins = 64 | down sample image using spartial size <br> histogram bins         |
+
+
+
 
 #### 3. Describe how (and identify where in your code) you trained a classifier using your selected HOG features (and color features if you used them).
 

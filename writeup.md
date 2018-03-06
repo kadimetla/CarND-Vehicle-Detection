@@ -59,7 +59,7 @@ I tried various combinations of parameters as shown in the table by tuning the p
 | color space     		  | 	 YCrCb			                                | Can be RGB, HSV, LUV, HLS, YUV, YCrCb         |
 | Histogram color bins  | histogram bins = 8 |  histogram bins         |
 | spatial color  |  	spatial size = (8,8)	| down sample image using spartial size    |
-| Histogram of Oriented Gradients  |  	HOG orientations = 11 <br> HOG pixels per cell = 8 <br> HOG cells per block = 2 <br> HOG Channel = ALL - Can be 0, 1, 2, or "ALL" |        |
+| Histogram of Oriented Gradients  |  	HOG orientations = 9 <br> HOG pixels per cell = 8 <br> HOG cells per block = 2 <br> HOG Channel = ALL - Can be 0, 1, 2, or "ALL" |        |
 
 
 #### 3. Describe how (and identify where in your code) you trained a classifier using your selected HOG features (and color features if you used them).

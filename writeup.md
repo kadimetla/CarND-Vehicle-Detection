@@ -38,7 +38,8 @@ You're reading it!
 
 #### 1. Explain how (and identify where in your code) you extracted HOG features from the training images.
 
-The code for this step is contained in the first code cell of the IPython notebook (or in lines # through # of the file called `some_file.py`).  
+The code for this step is contained in the object hog features code cell of the IPython notebook VehicleDetection.ipynb. I explored hog features in the IPython notebook scikit-imageHog.ipynb for car and notcar images. 
+ 
 
 I started by reading in all the `vehicle` and `non-vehicle` images.  Here is an example of one of each of the `vehicle` and `non-vehicle` classes:
 
@@ -53,17 +54,27 @@ Here is an example using the `YCrCb` color space and HOG parameters of `orientat
 
 #### 2. Explain how you settled on your final choice of HOG parameters.
 
-I tried various combinations of parameters and...
+I tried various combinations of parameters as shown in the table by tuning the parameters to come with SVM model to predict car and not car in the images.
+
+
+| parameters       		  |     value     					                      | description                                  |
+|:---------------------:|:---------------------------------------------:|:---------------------------------------------:|
+| color space     		  | 	 YCrCb			                                | Can be RGB, HSV, LUV, HLS, YUV, YCrCb         |
+| Histogram color bins  |  	spatial size = (64,64)	<br> histogram bins = 64 | down sample image using spartial size <br> histogram bins         |
+| Histogram of Oriented Gradients  |  	HOG orientations = 11 <br> HOG pixels per cell = 8 <br> HOG cells per block = 2 <br> HOG Channel = ALL - Can be 0, 1, 2, or "ALL" |        |
+
+
+
 
 #### 3. Describe how (and identify where in your code) you trained a classifier using your selected HOG features (and color features if you used them).
 
-I trained a linear SVM using...
+I trained a linear SVM using color space , histogram color bins, and HOG features. 
 
 ### Sliding Window Search
 
 #### 1. Describe how (and identify where in your code) you implemented a sliding window search.  How did you decide what scales to search and how much to overlap windows?
 
-I decided to search random window positions at random scales all over the image and came up with this (ok just kidding I didn't actually ;):
+Sliding window search using sub sampling.
 
 ![alt text][image3]
 

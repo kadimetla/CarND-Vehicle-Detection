@@ -19,12 +19,7 @@ The goals / steps of this project are the following:
 [image2]: ./examples/hog_vis_car_image9.png
 [image3]: ./examples/hog_vis_not_car_image106.png
 [image4]: ./examples/hog_vis_not_car_image36.png
-[image31]: ./examples/sliding_windows.jpg
-[image41]: ./examples/sliding_window.jpg
-[image51]: ./examples/bboxes_and_heat.png
-[image61]: ./examples/labels_map.png
-[image71]: ./examples/output_bboxes.png
-[video11]: ./project_video.mp4
+[video1]: ./project_video.mp4
 
 ## [Rubric](https://review.udacity.com/#!/rubrics/513/view) Points
 ### Here I will consider the rubric points individually and describe how I addressed each point in my implementation.  
@@ -59,14 +54,12 @@ Here is an example using the `YCrCb` color space and HOG parameters of `orientat
 
 I tried various combinations of parameters as shown in the table by tuning the parameters to come with SVM model to predict car and not car in the images.
 
-
 | parameters       		  |     value     					                      | description                                  |
 |:---------------------:|:---------------------------------------------:|:---------------------------------------------:|
 | color space     		  | 	 YCrCb			                                | Can be RGB, HSV, LUV, HLS, YUV, YCrCb         |
-| Histogram color bins  |  	spatial size = (64,64)	<br> histogram bins = 64 | down sample image using spartial size <br> histogram bins         |
+| Histogram color bins  | histogram bins = 8 |  histogram bins         |
+| spatial color  |  	spatial size = (8,8)	| down sample image using spartial size    |
 | Histogram of Oriented Gradients  |  	HOG orientations = 11 <br> HOG pixels per cell = 8 <br> HOG cells per block = 2 <br> HOG Channel = ALL - Can be 0, 1, 2, or "ALL" |        |
-
-
 
 
 #### 3. Describe how (and identify where in your code) you trained a classifier using your selected HOG features (and color features if you used them).
@@ -79,14 +72,9 @@ I trained a linear SVM using color space , histogram color bins, and HOG feature
 
 Sliding window search using sub sampling.
 
-![alt text][image3]
-
 #### 2. Show some examples of test images to demonstrate how your pipeline is working.  What did you do to optimize the performance of your classifier?
 
 Ultimately I searched on two scales using YCrCb 3-channel HOG features plus spatially binned color and histograms of color in the feature vector, which provided a nice result.  Here are some example images:
-
-![alt text][image4]
----
 
 ### Video Implementation
 
@@ -102,14 +90,10 @@ Here's an example result showing the heatmap from a series of frames of video, t
 
 ### Here are six frames and their corresponding heatmaps:
 
-![alt text][image5]
-
 ### Here is the output of `scipy.ndimage.measurements.label()` on the integrated heatmap from all six frames:
-![alt text][image6]
+
 
 ### Here the resulting bounding boxes are drawn onto the last frame in the series:
-![alt text][image7]
-
 
 
 ---

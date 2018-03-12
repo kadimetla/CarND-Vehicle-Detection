@@ -50,6 +50,7 @@ Here is an example using the `YCrCb` color space and HOG parameters of `orientat
 ![alt text][image2]
 ![alt text][image3]
 ![alt text][image4]
+
 #### 2. Explain how you settled on your final choice of HOG parameters.
 
 I tried various combinations of parameters as shown in the table by tuning the parameters to come with SVM model to predict car and not car in the images.
@@ -64,17 +65,21 @@ I tried various combinations of parameters as shown in the table by tuning the p
 
 #### 3. Describe how (and identify where in your code) you trained a classifier using your selected HOG features (and color features if you used them).
 
-I trained a linear SVM using color space , histogram color bins, and HOG features. 
+I trained a linear SVM using color space , histogram color bins, and HOG features. The code is implemented in 'VehicleDetection.ipynb' in the section **train to predict car or not a car using linear SVM model**.
 
 ### Sliding Window Search
 
 #### 1. Describe how (and identify where in your code) you implemented a sliding window search.  How did you decide what scales to search and how much to overlap windows?
 
 Sliding window search using sub sampling.
+get_cars single function that can extract features using hog sub-sampling and make predictions in IPython notebook 'VehicleDetection.ipynb'
+
 
 #### 2. Show some examples of test images to demonstrate how your pipeline is working.  What did you do to optimize the performance of your classifier?
 
 Ultimately I searched on two scales using YCrCb 3-channel HOG features plus spatially binned color and histograms of color in the feature vector, which provided a nice result.  Here are some example images:
+
+Under test images I have images. I have not saved them.
 
 ### Video Implementation
 
@@ -102,5 +107,7 @@ Here's an example result showing the heatmap from a series of frames of video, t
 
 #### 1. Briefly discuss any problems / issues you faced in your implementation of this project.  Where will your pipeline likely fail?  What could you do to make it more robust?
 
-Here I'll talk about the approach I took, what techniques I used, what worked and why, where the pipeline might fail and how I might improve it if I were going to pursue this project further.  
+Here I'll talk about the approach I took, what techniques I used, what worked and why, where the pipeline might fail and how I might improve it if I were going to pursue this project further. 
+
+The vehicle detection boxes is not smooth and  I tried tune image sub sampling, tune hog sub sampling. Still I see problem and needs some more work to plot scatter plot SVM linear model to see cars vs not cars and when it fails to detect. I played with heatmap for object detection. 
 
